@@ -6,7 +6,7 @@ require 'rake/clean'
 require 'rbconfig'
 include Config
 
-PKG_NAME = 'term-ansicolor'
+PKG_NAME = 'term-ansicolor-hi'
 PKG_VERSION = File.read('VERSION').chomp
 PKG_FILES = FileList['**/*'].exclude(/(CVS|\.svn|pkg|coverage|doc)/)
 CLEAN.include 'coverage', 'doc'
@@ -26,8 +26,8 @@ if defined? Gem
   spec = Gem::Specification.new do |s|
     s.name = PKG_NAME
     s.version = PKG_VERSION
-    s.summary = "Ruby library that colors strings using ANSI escape sequences"
-    s.description = ""
+    s.summary = "Ruby library that colors strings using ANSI escape sequences (includes High Intensity colors)"
+    s.description = "Exactly the same as term-ansicolor but includes the high intensity colors I needed"
 
     s.files = PKG_FILES.to_a.sort
 
@@ -39,10 +39,9 @@ if defined? Gem
     s.rdoc_options << '--main' <<  'README' << '--title' << 'Term::ANSIColor'
     s.test_files = Dir['tests/*.rb']
 
-    s.author = "Florian Frank"
-    s.email = "flori@ping.de"
-    s.homepage = "http://flori.github.com/#{PKG_NAME}"
-    s.rubyforge_project = PKG_NAME
+    s.author = "Florian Frank [Minor update by Mike Bethany]"
+    s.email = "flori@ping.de [mikbe.tk@gmail.com]"
+    s.homepage = "http://mikbe.tk"
   end
 
   Rake::GemPackageTask.new(spec) do |pkg|

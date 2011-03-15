@@ -1,5 +1,10 @@
 == ANSI escape sequences in Ruby
 
+Note:
+The original author is not answering pull requests and I really needed high-intensity colors.  
+This necessitated me renaming the library so I could publish a new one.  
+All credit remains with Florian Frank.  
+
 === Description
 
 This library can be used to color/decolor strings using ANSI escape sequences.
@@ -17,15 +22,25 @@ Or if you prefer using Rake, try:
 Or if you want to use rubygems just type this and rubygems fetches the gem and
 installs it for you:
 
-# gem install term-ansicolor
+# gem install term-ansicolor-hi
 
-=== Download
+=== Current Downloads and Links
 
-The latest version of this library can be downloaded at
+For more current versions of unsupported software visit:
+
+* http://mikbe.tk
+
+The source code for this updated library can be found here
+
+* https://github.com/mikbe/term-ansicolor-hi
+
+=== Links to original version
+
+The old version of this library can be found here
 
 * http://www.ping.de/~flori
 
-The homepage of this library is located at
+The homepage of the original library is
 
 * http://flori.github.com/term-ansicolor
 
@@ -43,6 +58,24 @@ be used:
     class Color
       extend Term::ANSIColor
     end
+
+    # Begin Edit (Mike Bethany)
+    
+    # You don't just have to use print to get the colors. 
+    # You can use the color attributes as standard Ruby string by adding
+    # them and embedding them with other strings as you normally would:
+    #
+    c = Term::ANSIColor
+    my_red_string = "#{c.red}I'm red!#{c.reset}"
+    my_green_string = "#{c.green}I'm green!#{c.reset}"
+    my_blue_string = "#{c.blue}I'm blue!#{c.reset}"
+
+    # Then you can output them using the standard Ruby 'puts' command:
+    puts my_red_string
+    puts my_green_string
+    puts my_blue_string
+    
+    # End edit
 
     print Color.red, Color.bold, "No Namespace cluttering:", Color.clear, "\n"
     print Color.green + "green" + Color.clear, "\n"
@@ -129,6 +162,10 @@ be used:
 === Author
 
 Florian Frank mailto:flori@ping.de
+
+=== Minor update by 
+
+Mike Bethany mailto:mikbe.tk@gmail.com
 
 === License
 
