@@ -14,7 +14,7 @@
                      for giving the hint.
 2005-09-05 - 1.0.1 * Fixed install bug in Rakefile, reported by
                      Martin DeMello <martindemello@gmail.com>
-2004-12-23 - 1.0.0 * Added Term::ANSIColor.coloring[?=]? methods.
+2004-12-23 - 1.0.0 * Added Term::ANSIColorHI.coloring[?=]? methods.
                      Thanks, Thomas Husterer for the contribution.
                    * Minor cleanup of code.
                    * Documented visible methods in the module.

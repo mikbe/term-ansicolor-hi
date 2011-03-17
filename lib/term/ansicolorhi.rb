@@ -1,9 +1,9 @@
 require 'term/ansicolor/version'
 
 module Term
-  # The ANSIColor module can be used for namespacing and mixed into your own
+  # The ANSIColorHI module can be used for namespacing and mixed into your own
   # classes.
-  module ANSIColor
+  module ANSIColorHI
     # :stopdoc:
     ATTRIBUTES = [
       [ :clear              ,   0 ], 
@@ -63,7 +63,7 @@ module Term
 
     # Turns the coloring on or off globally, so you can easily do
     # this for example:
-    #  Term::ANSIColor::coloring = STDOUT.isatty
+    #  Term::ANSIColorHI::coloring = STDOUT.isatty
     def self.coloring=(val)
       @coloring = val
     end
@@ -73,7 +73,7 @@ module Term
       eval %Q{
           def #{c}(string = nil)
             result = ''
-            result << "\e[#{v}m" if Term::ANSIColor.coloring?
+            result << "\e[#{v}m" if Term::ANSIColorHI.coloring?
             if block_given?
               result << yield
             elsif string
@@ -83,7 +83,7 @@ module Term
             else
               return result #only switch on
             end
-            result << "\e[0m" if Term::ANSIColor.coloring?
+            result << "\e[0m" if Term::ANSIColorHI.coloring?
             result
           end
       }
@@ -109,7 +109,7 @@ module Term
 
     module_function
 
-    # Returns an array of all Term::ANSIColor attributes as symbols.
+    # Returns an array of all Term::ANSIColorHI attributes as symbols.
     def attributes
       ATTRIBUTE_NAMES
     end

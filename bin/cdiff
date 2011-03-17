@@ -5,7 +5,7 @@
 
 require 'term/ansicolor'
 
-include Term::ANSIColor
+include Term::ANSIColorHI
 
 ARGF.each do |line|
   STDOUT.print(
