@@ -50,7 +50,7 @@ Additional to the two executables cdiff and decolor, the file
 examples/example.rb in the source/gem-distribution shows how this library can
 be used:
 
-    require 'term/ansicolor'
+    require 'term/ansicolorhi'
 
     # Use this trick to work around namespace cluttering that
     # happens if you just include Term::ANSIColorHI:

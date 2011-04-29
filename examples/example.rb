@@ -1,4 +1,4 @@
-require 'term/ansicolor'
+require 'term/ansicolorhi'
 
 # Use this trick to work around namespace cluttering that
 # happens if you just include Term::ANSIColorHI:
